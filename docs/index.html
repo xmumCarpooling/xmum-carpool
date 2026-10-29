@@ -1,13 +1,13 @@
-   <!doctype html>
-   <meta charset="utf-8">
-   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<!doctype html>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>XMUM 拼车</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Overpass:wght@400;600;700;800&family=Noto+Sans+SC:wght@400;500;700;800&display=swap">
 <style>
-   [hidden]{display:none!important}
+[hidden]{display:none!important}
 body{margin:0}
 /* Layout: one phone column with a bottom tab bar (hall / messages / trips). Hall = road-sign header + ride slips + one-line composer; a ride's chat opens full screen. */
 :root{
@@ -341,8 +341,7 @@ body.t-hall .toast{bottom:calc(150px + env(safe-area-inset-bottom,0px))}
   <section>
     <div class="sec-head"><h2 class="sec-h">我的资料（可不填）</h2></div>
     <div class="pcard">
-      <span class="lab">性别</span>
-      <div id="pGender"></div>
+      <div id="pGender" hidden></div>
       <span class="lab">WhatsApp</span>
       <input id="p-wa" class="inp" inputmode="tel" placeholder="比如 012-345 6789">
       <span class="lab">微信号</span>
@@ -463,7 +462,7 @@ var NODE_NAME = { kl: "KL 市区", sunway: "双威", ioi: "IOI City", kip: "KIP 
 var PROFILE_KEY = "xmum-carpool-me";
 var READ_KEY = "xmum-carpool-read";
 var WEEK = "日一二三四五六";
-var GENDER = { m: "男生", f: "女生", bag: "沃尔玛塑料袋" };
+var GENDER = {};
 var GENDER_OPTS = [["m", "男"], ["f", "女"], ["bag", "沃尔玛塑料袋"], ["", "无"]];
 var PERIOD_OPTS = ["上午", "中午", "下午", "傍晚", "晚上", ""];
 
@@ -1734,7 +1733,7 @@ function renderNewSheet() {
 
   h += '<p class="err" id="f-err" hidden></p>';
   h += '<button class="btn primary big" id="f-submit" data-act="f-submit">发布拼车</button>';
-  h += '<p class="hint">性别和联系方式在“我的行程”里设置一次就行。</p>';
+  h += '<p class="hint">联系方式在“我的行程”里设置一次就行。</p>';
   h += '</div>';
   $("sheetBody").innerHTML = h;
 }
